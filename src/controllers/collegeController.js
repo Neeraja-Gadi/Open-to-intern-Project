@@ -37,14 +37,15 @@ const createCollege = async function(req,res){
             res.status(400).send({status: false, message: "  Provide name in correct format !!"})
             return
         }
-        //Only characters are allowed
+        //College Name Is Already Registered
         let uniqueName = await collegeModel.findOne({name : name})
         if(uniqueName) {
                 res.status(400).send({status: false, message: "College Name already exists"})
                 return 
             }
-            //College Name Is Already Registered
-    
+            
+        //Only characters are allowed 
+        
         if(!fullName){
             res.status(400).send({status: false, message: "Oops! you forget to enter Full Name of your College"})
             return

@@ -22,6 +22,7 @@ const addIntern = async function(req,res){
             res.status(400).send({status: false, message: "Please provide your name !!"})
             return
         }
+
         //Please Provide Intern Name 
 
         if(typeof name !== "string" || name.trim().length == 0){

@@ -13,7 +13,7 @@ router.get('/functionup/collegeDetails', collegeController.getCollegeDetails)
 
 
 router.all("/**", function (req, res) {
-    res.status(404).send({
+    res.status(400).send({
         status: false,
         msg: "Make Sure Your Endpoint is Correct or Not!"
     })
